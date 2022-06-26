@@ -49,7 +49,8 @@
         $ptr =  fgets($myfile);
         fclose($myfile);
 
-
+/* This is the code that is executed when the config is set to ok. It is going to return the first line
+of the file. */
         if (( $_GET['config'] == 'ok') && ($ptr < $length) && ($ptr >= 0))
         {
             echo $mydata[$ptr];
@@ -66,6 +67,8 @@
             echo $mydata[$ptr-1];
 
         }
+/* This is the code that is executed when the config is set to doneBurn. It is going to delete the file
+and return DONE UPLOAD. */
         elseif (($ptr == $length) || ($_GET['config'] == 'doneBurn'))
         {
             echo "DONE UPLOAD ";
